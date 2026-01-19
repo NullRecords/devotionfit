@@ -1,6 +1,6 @@
 // ===================================
-// Influencer Platform - Main App JS
-// Progressive Web App Functionality
+// Devotion.Fit by Eileen - Main App JS
+// Progressive Web App with i18n Support
 // ===================================
 
 // Register Service Worker
@@ -15,6 +15,53 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+
+// ===================================
+// Language Switching (i18n)
+// ===================================
+function setLanguage(lang) {
+  // Update HTML lang attribute
+  document.documentElement.lang = lang;
+  
+  // Update toggle buttons
+  const enBtn = document.getElementById('lang-en');
+  const esBtn = document.getElementById('lang-es');
+  
+  if (lang === 'en') {
+    enBtn?.classList.add('bg-brand-600', 'text-white');
+    enBtn?.classList.remove('text-gray-300');
+    esBtn?.classList.remove('bg-brand-600', 'text-white');
+    esBtn?.classList.add('text-gray-300');
+  } else {
+    esBtn?.classList.add('bg-brand-600', 'text-white');
+    esBtn?.classList.remove('text-gray-300');
+    enBtn?.classList.remove('bg-brand-600', 'text-white');
+    enBtn?.classList.add('text-gray-300');
+  }
+  
+  // Save preference
+  localStorage.setItem('preferred-language', lang);
+}
+
+// Load saved language preference
+function loadLanguagePreference() {
+  const savedLang = localStorage.getItem('preferred-language');
+  if (savedLang) {
+    setLanguage(savedLang);
+  } else {
+    // Auto-detect from browser
+    const browserLang = navigator.language.substring(0, 2);
+    if (browserLang === 'es') {
+      setLanguage('es');
+    }
+  }
+}
+
+// Initialize language on load
+document.addEventListener('DOMContentLoaded', loadLanguagePreference);
+
+// Make setLanguage globally available
+window.setLanguage = setLanguage;
 
 // ===================================
 // Mobile Menu Toggle

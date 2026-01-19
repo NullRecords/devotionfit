@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Influencer Platform - Connect, Create, Inspire">
-  <meta name="theme-color" content="#6366f1">
+  <meta name="description" content="Devotion.Fit by Eileen - Personal Training & Fitness Coaching. Transform your body and mind with personalized online and in-person training sessions.">
+  <meta name="theme-color" content="#10b981">
   
   <!-- PWA Meta Tags -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Influencer">
+  <meta name="apple-mobile-web-app-title" content="Devotion.Fit">
   
   <!-- Icons -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
   
-  <title>Influencer Platform | Connect, Create, Inspire</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Devotion.Fit by Eileen">
+  <meta property="og:description" content="Personal Training & Fitness Coaching - Online & In-Person Sessions">
+  <meta property="og:image" content="assets/images/eileen-logo-badge.webp">
+  <meta property="og:type" content="website">
+  
+  <title>Devotion.Fit | Personal Training by Eileen</title>
   
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -25,109 +31,112 @@
       theme: {
         extend: {
           colors: {
-            primary: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#312e81',
-              950: '#1e1b4b',
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
             },
+            dark: {
+              900: '#0a0a0a',
+              800: '#171717',
+              700: '#262626',
+              600: '#404040',
+            }
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Poppins', 'system-ui', 'sans-serif'],
           },
         },
       },
     }
   </script>
   
-  <!-- Inter Font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* Custom scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #1e1b4b; }
-    ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 3px; }
     
-    /* Glass morphism */
     .glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     
-    /* Gradient text */
     .gradient-text {
-      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      background: linear-gradient(135deg, #10b981 0%, #34d399 50%, #6ee7b7 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     
-    /* Animated gradient background */
-    .animated-gradient {
-      background: linear-gradient(-45deg, #1e1b4b, #312e81, #4338ca, #6366f1);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 50%, rgba(10,10,10,1) 100%);
     }
     
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    /* Pulse animation for CTA */
     .pulse-glow {
       animation: pulse-glow 2s infinite;
     }
     
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
-      50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.8); }
+      0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+      50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.7); }
     }
     
-    /* Safe area padding for notched devices */
     .safe-area-top { padding-top: env(safe-area-inset-top); }
     .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+    
+    [data-lang="es"] { display: none; }
+    html[lang="es"] [data-lang="en"] { display: none; }
+    html[lang="es"] [data-lang="es"] { display: block; }
+    html[lang="es"] span[data-lang="es"] { display: inline; }
   </style>
 </head>
 
-<body class="bg-slate-900 text-white font-sans antialiased safe-area-top safe-area-bottom">
+<body class="bg-dark-900 text-white font-sans antialiased">
   
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 safe-area-top">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <a href="#" class="flex items-center space-x-2">
-          <img src="assets/images/logo.png" alt="Logo" class="h-8 w-8 rounded-lg">
-          <span class="font-bold text-lg hidden sm:block">Influencer</span>
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#" class="flex items-center space-x-3">
+          <img src="assets/images/eileen-logo-badge.webp" alt="Devotion.Fit" class="h-10 md:h-12 w-auto">
+          <span class="font-display font-bold text-lg md:text-xl hidden sm:block">
+            <span class="text-brand-400">Devotion</span><span class="text-white">.Fit</span>
+          </span>
         </a>
         
-        <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
-          <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
-          <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+          <a href="#services" class="text-gray-300 hover:text-brand-400 transition"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a>
+          <a href="#about" class="text-gray-300 hover:text-brand-400 transition"><span data-lang="en">About</span><span data-lang="es">Sobre Mí</span></a>
+          <a href="#pricing" class="text-gray-300 hover:text-brand-400 transition"><span data-lang="en">Pricing</span><span data-lang="es">Precios</span></a>
+          <a href="#contact" class="text-gray-300 hover:text-brand-400 transition"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a>
         </div>
         
-        <!-- CTA Button -->
         <div class="flex items-center space-x-4">
-          <a href="#contact" class="bg-primary-600 hover:bg-primary-500 px-4 py-2 rounded-full text-sm font-medium transition transform hover:scale-105">
-            Get Started
+          <!-- Language Toggle -->
+          <div class="flex items-center bg-dark-700 rounded-full p-1">
+            <button id="lang-en" class="px-3 py-1 text-sm font-medium rounded-full transition hover:text-brand-400 bg-brand-600 text-white" onclick="setLanguage('en')">EN</button>
+            <button id="lang-es" class="px-3 py-1 text-sm font-medium rounded-full transition hover:text-brand-400" onclick="setLanguage('es')">ES</button>
+          </div>
+          
+          <a href="#booking" class="hidden sm:inline-flex bg-brand-600 hover:bg-brand-500 px-5 py-2.5 rounded-full text-sm font-semibold transition transform hover:scale-105">
+            <span data-lang="en">Book Now</span><span data-lang="es">Reservar</span>
           </a>
           
-          <!-- Mobile Menu Button -->
           <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-white/10 transition">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -140,194 +149,215 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-white/10">
       <div class="px-4 py-4 space-y-3">
-        <a href="#features" class="block py-2 text-gray-300 hover:text-white transition">Features</a>
-        <a href="#about" class="block py-2 text-gray-300 hover:text-white transition">About</a>
-        <a href="#contact" class="block py-2 text-gray-300 hover:text-white transition">Contact</a>
+        <a href="#services" class="block py-2 text-gray-300 hover:text-brand-400 transition"><span data-lang="en">Services</span><span data-lang="es">Servicios</span></a>
+        <a href="#about" class="block py-2 text-gray-300 hover:text-brand-400 transition"><span data-lang="en">About</span><span data-lang="es">Sobre Mí</span></a>
+        <a href="#pricing" class="block py-2 text-gray-300 hover:text-brand-400 transition"><span data-lang="en">Pricing</span><span data-lang="es">Precios</span></a>
+        <a href="#contact" class="block py-2 text-gray-300 hover:text-brand-400 transition"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a>
+        <a href="#booking" class="block py-3 mt-4 bg-brand-600 hover:bg-brand-500 rounded-full text-center font-semibold transition">
+          <span data-lang="en">Book Now</span><span data-lang="es">Reservar Ahora</span>
+        </a>
       </div>
     </div>
   </nav>
   
   <!-- Hero Section -->
-  <section class="animated-gradient min-h-screen flex items-center pt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Content -->
-        <div class="text-center lg:text-left">
-          <span class="inline-block px-4 py-1 mb-6 text-sm font-medium bg-primary-600/20 text-primary-300 rounded-full border border-primary-500/30">
-            ✨ Welcome to the Future
-          </span>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Connect, Create, 
-            <span class="gradient-text">Inspire</span>
-          </h1>
-          <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
-            Build your influence with the most powerful platform designed for modern creators. Connect with your audience like never before.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#contact" class="pulse-glow bg-primary-600 hover:bg-primary-500 px-8 py-4 rounded-full font-semibold text-lg transition transform hover:scale-105 text-center">
-              Start Free Trial
-            </a>
-            <a href="#features" class="glass border border-white/20 hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
-              Learn More
-            </a>
-          </div>
-          
-          <!-- Stats -->
-          <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/10">
-            <div class="text-center lg:text-left">
-              <div class="text-2xl sm:text-3xl font-bold gradient-text">10K+</div>
-              <div class="text-sm text-gray-400">Active Users</div>
-            </div>
-            <div class="text-center lg:text-left">
-              <div class="text-2xl sm:text-3xl font-bold gradient-text">50M+</div>
-              <div class="text-sm text-gray-400">Engagements</div>
-            </div>
-            <div class="text-center lg:text-left">
-              <div class="text-2xl sm:text-3xl font-bold gradient-text">99%</div>
-              <div class="text-sm text-gray-400">Satisfaction</div>
-            </div>
-          </div>
+  <section class="relative min-h-screen flex items-center">
+    <div class="absolute inset-0">
+      <img src="assets/images/devotion.fit.png" alt="Fitness Training" class="w-full h-full object-cover object-top">
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+      <div class="max-w-2xl">
+        <span class="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-brand-600/20 text-brand-300 rounded-full border border-brand-500/30">
+          <span data-lang="en">🏋️ Personal Training & Fitness Coaching</span>
+          <span data-lang="es">🏋️ Entrenamiento Personal & Coaching Fitness</span>
+        </span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          <span data-lang="en">Transform Your <span class="gradient-text">Body & Mind</span></span>
+          <span data-lang="es">Transforma Tu <span class="gradient-text">Cuerpo y Mente</span></span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+          <span data-lang="en">Personalized fitness programs designed for your goals. Train online from anywhere or join me for in-person sessions. Your journey to a healthier you starts here.</span>
+          <span data-lang="es">Programas de fitness personalizados diseñados para tus metas. Entrena en línea desde cualquier lugar o únete a mis sesiones presenciales. Tu camino hacia una vida más saludable comienza aquí.</span>
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#booking" class="pulse-glow bg-brand-600 hover:bg-brand-500 px-8 py-4 rounded-full font-semibold text-lg transition transform hover:scale-105 text-center">
+            <span data-lang="en">Start Your Journey</span><span data-lang="es">Comienza Tu Viaje</span>
+          </a>
+          <a href="#services" class="border-2 border-white/30 hover:border-brand-400 hover:bg-brand-400/10 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
+            <span data-lang="en">View Programs</span><span data-lang="es">Ver Programas</span>
+          </a>
         </div>
         
-        <!-- Hero Image -->
-        <div class="relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-primary-600/30 to-purple-600/30 rounded-3xl blur-3xl"></div>
-          <img src="assets/images/hero-bg.jpg" alt="Hero" class="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
+        <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/10">
+          <div class="text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-bold text-brand-400">500+</div>
+            <div class="text-sm text-gray-400"><span data-lang="en">Clients Transformed</span><span data-lang="es">Clientes Transformados</span></div>
+          </div>
+          <div class="text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-bold text-brand-400">10+</div>
+            <div class="text-sm text-gray-400"><span data-lang="en">Years Experience</span><span data-lang="es">Años de Experiencia</span></div>
+          </div>
+          <div class="text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-bold text-brand-400">24/7</div>
+            <div class="text-sm text-gray-400"><span data-lang="en">Online Support</span><span data-lang="es">Soporte en Línea</span></div>
+          </div>
         </div>
       </div>
     </div>
+    
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
   </section>
   
-  <!-- Features Section -->
-  <section id="features" class="py-20 bg-slate-900">
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-dark-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
       <div class="text-center mb-16">
-        <span class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-primary-600/20 text-primary-300 rounded-full">
-          Features
+        <span class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-brand-600/20 text-brand-300 rounded-full">
+          <span data-lang="en">Training Programs</span><span data-lang="es">Programas de Entrenamiento</span>
         </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-          Everything You <span class="gradient-text">Need</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <span data-lang="en">Choose Your <span class="gradient-text">Path</span></span>
+          <span data-lang="es">Elige Tu <span class="gradient-text">Camino</span></span>
         </h2>
         <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-          Powerful tools designed to help you grow your influence and connect with your audience.
+          <span data-lang="en">Whether you prefer training from home or face-to-face sessions, I have the perfect program for you.</span>
+          <span data-lang="es">Ya sea que prefieras entrenar desde casa o sesiones presenciales, tengo el programa perfecto para ti.</span>
         </p>
       </div>
       
-      <!-- Features Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        <!-- Feature Card 1 -->
-        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-            <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Online Training -->
+        <div class="group p-6 sm:p-8 rounded-3xl bg-dark-800 border border-dark-600 hover:border-brand-500/50 transition-all duration-300 hover:-translate-y-2">
+          <div class="w-14 h-14 bg-brand-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+            <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
-          <p class="text-gray-400">Optimized performance ensures your content reaches your audience instantly.</p>
+          <h3 class="text-xl font-semibold mb-3"><span data-lang="en">Online Training</span><span data-lang="es">Entrenamiento en Línea</span></h3>
+          <p class="text-gray-400 mb-4">
+            <span data-lang="en">Train from anywhere with live video sessions, custom workout plans, and 24/7 app access.</span>
+            <span data-lang="es">Entrena desde cualquier lugar con sesiones de video en vivo, planes de ejercicio personalizados y acceso a la app 24/7.</span>
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Live Video Sessions</span><span data-lang="es">Sesiones de Video en Vivo</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Custom Workout Plans</span><span data-lang="es">Planes Personalizados</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Progress Tracking</span><span data-lang="es">Seguimiento de Progreso</span>
+            </li>
+          </ul>
         </div>
         
-        <!-- Feature Card 2 -->
-        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-            <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+        <!-- In-Person Training -->
+        <div class="group p-6 sm:p-8 rounded-3xl bg-dark-800 border border-dark-600 hover:border-brand-500/50 transition-all duration-300 hover:-translate-y-2">
+          <div class="w-14 h-14 bg-brand-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+            <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Mobile First</h3>
-          <p class="text-gray-400">Designed from the ground up for the mobile experience your audience expects.</p>
+          <h3 class="text-xl font-semibold mb-3"><span data-lang="en">In-Person Training</span><span data-lang="es">Entrenamiento Presencial</span></h3>
+          <p class="text-gray-400 mb-4">
+            <span data-lang="en">One-on-one personal training sessions at my studio or your preferred location.</span>
+            <span data-lang="es">Sesiones de entrenamiento personal uno a uno en mi estudio o en tu ubicación preferida.</span>
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Hands-on Guidance</span><span data-lang="es">Guía Práctica</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Form Correction</span><span data-lang="es">Corrección de Forma</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Flexible Scheduling</span><span data-lang="es">Horarios Flexibles</span>
+            </li>
+          </ul>
         </div>
         
-        <!-- Feature Card 3 -->
-        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-            <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+        <!-- Nutrition Coaching -->
+        <div class="group p-6 sm:p-8 rounded-3xl bg-dark-800 border border-dark-600 hover:border-brand-500/50 transition-all duration-300 hover:-translate-y-2 md:col-span-2 lg:col-span-1">
+          <div class="w-14 h-14 bg-brand-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
+            <svg class="w-7 h-7 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Analytics</h3>
-          <p class="text-gray-400">Deep insights into your audience engagement and content performance.</p>
-        </div>
-        
-        <!-- Feature Card 4 -->
-        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-            <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Secure</h3>
-          <p class="text-gray-400">Enterprise-grade security to protect your content and your audience's data.</p>
-        </div>
-        
-        <!-- Feature Card 5 -->
-        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-            <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Community</h3>
-          <p class="text-gray-400">Build and nurture your community with powerful engagement tools.</p>
-        </div>
-        
-        <!-- Feature Card 6 -->
-        <div class="group p-6 sm:p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-primary-500/50 transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-primary-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-            <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Auto Sync</h3>
-          <p class="text-gray-400">Seamlessly sync your content across all your platforms automatically.</p>
+          <h3 class="text-xl font-semibold mb-3"><span data-lang="en">Nutrition Coaching</span><span data-lang="es">Coaching Nutricional</span></h3>
+          <p class="text-gray-400 mb-4">
+            <span data-lang="en">Customized meal plans and nutritional guidance to fuel your transformation.</span>
+            <span data-lang="es">Planes de comida personalizados y guía nutricional para impulsar tu transformación.</span>
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Custom Meal Plans</span><span data-lang="es">Planes de Comida</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Macro Tracking</span><span data-lang="es">Seguimiento de Macros</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Supplement Guidance</span><span data-lang="es">Guía de Suplementos</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
   
   <!-- About Section -->
-  <section id="about" class="py-20 bg-slate-800/30">
+  <section id="about" class="py-20 bg-dark-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Image -->
         <div class="relative order-2 lg:order-1">
-          <div class="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-3xl blur-2xl"></div>
-          <img src="assets/images/about.jpg" alt="About Us" class="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]">
+          <div class="absolute -inset-4 bg-gradient-to-r from-brand-600/20 to-brand-400/20 rounded-3xl blur-2xl"></div>
+          <img src="assets/images/fitness-1.png" alt="Eileen - Personal Trainer" class="relative rounded-3xl shadow-2xl w-full object-cover">
+          <div class="absolute -bottom-6 -right-6 bg-brand-600 text-white p-4 rounded-2xl shadow-xl">
+            <div class="text-3xl font-bold">10+</div>
+            <div class="text-sm"><span data-lang="en">Years Experience</span><span data-lang="es">Años de Experiencia</span></div>
+          </div>
         </div>
         
-        <!-- Content -->
         <div class="order-1 lg:order-2">
-          <span class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-primary-600/20 text-primary-300 rounded-full">
-            About Us
+          <span class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-brand-600/20 text-brand-300 rounded-full">
+            <span data-lang="en">Meet Your Trainer</span><span data-lang="es">Conoce a Tu Entrenadora</span>
           </span>
-          <h2 class="text-3xl sm:text-4xl font-bold mb-6">
-            Built for <span class="gradient-text">Creators</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">
+            <span data-lang="en">Hi, I'm <span class="gradient-text">Eileen</span></span>
+            <span data-lang="es">Hola, Soy <span class="gradient-text">Eileen</span></span>
           </h2>
-          <p class="text-gray-300 text-lg mb-6">
-            We understand the challenges of building an online presence. That's why we've created a platform that puts creators first, with intuitive tools and powerful features.
+          <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+            <span data-lang="en">I'm a certified personal trainer and nutrition coach dedicated to helping you achieve your fitness goals. With over 10 years of experience, I've helped hundreds of clients transform their bodies and lives.</span>
+            <span data-lang="es">Soy entrenadora personal certificada y coach nutricional dedicada a ayudarte a alcanzar tus metas de fitness. Con más de 10 años de experiencia, he ayudado a cientos de clientes a transformar sus cuerpos y vidas.</span>
           </p>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start space-x-3">
-              <svg class="w-6 h-6 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-gray-300">Easy-to-use content creation tools</span>
-            </li>
-            <li class="flex items-start space-x-3">
-              <svg class="w-6 h-6 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-gray-300">Real-time audience insights</span>
-            </li>
-            <li class="flex items-start space-x-3">
-              <svg class="w-6 h-6 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span class="text-gray-300">24/7 dedicated support team</span>
-            </li>
-          </ul>
-          <a href="#contact" class="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-500 px-6 py-3 rounded-full font-medium transition transform hover:scale-105">
-            <span>Get in Touch</span>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            <span data-lang="en">My approach combines science-based training methods with personalized attention. Whether you're looking to lose weight, build muscle, or improve your overall health, I'll create a custom program tailored to your unique needs.</span>
+            <span data-lang="es">Mi enfoque combina métodos de entrenamiento basados en la ciencia con atención personalizada. Ya sea que busques perder peso, ganar músculo o mejorar tu salud en general, crearé un programa personalizado adaptado a tus necesidades únicas.</span>
+          </p>
+          
+          <div class="flex flex-wrap gap-3 mb-8">
+            <span class="px-3 py-1 bg-dark-700 rounded-full text-sm text-gray-300">NASM Certified</span>
+            <span class="px-3 py-1 bg-dark-700 rounded-full text-sm text-gray-300">ACE Certified</span>
+            <span class="px-3 py-1 bg-dark-700 rounded-full text-sm text-gray-300">Precision Nutrition</span>
+          </div>
+          
+          <a href="#booking" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 px-6 py-3 rounded-full font-medium transition transform hover:scale-105">
+            <span data-lang="en">Let's Work Together</span><span data-lang="es">Trabajemos Juntos</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
@@ -337,86 +367,252 @@
     </div>
   </section>
   
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-slate-900">
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 bg-dark-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <span class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-primary-600/20 text-primary-300 rounded-full">
-          Contact
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-brand-600/20 text-brand-300 rounded-full">
+          <span data-lang="en">Investment in Yourself</span><span data-lang="es">Invierte en Ti</span>
         </span>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-          Let's <span class="gradient-text">Connect</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <span data-lang="en">Simple <span class="gradient-text">Pricing</span></span>
+          <span data-lang="es">Precios <span class="gradient-text">Simples</span></span>
         </h2>
-        <p class="text-gray-400 text-lg">
-          Ready to start your journey? Get in touch and let's build something amazing together.
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          <span data-lang="en">Choose the plan that fits your goals and schedule. All plans include personalized attention and support.</span>
+          <span data-lang="es">Elige el plan que se ajuste a tus metas y horario. Todos los planes incluyen atención y apoyo personalizados.</span>
         </p>
       </div>
       
-      <!-- Contact Form -->
-      <div class="max-w-xl mx-auto">
-        <form class="space-y-6">
-          <div class="grid sm:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Basic Plan -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-dark-800 border border-dark-600 transition-all duration-300 hover:border-brand-500/30">
+          <h3 class="text-xl font-semibold mb-2"><span data-lang="en">Online Basic</span><span data-lang="es">Online Básico</span></h3>
+          <p class="text-gray-400 text-sm mb-6"><span data-lang="en">Perfect for self-motivated individuals</span><span data-lang="es">Perfecto para personas automotivadas</span></p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$99</span>
+            <span class="text-gray-400"><span data-lang="en">/month</span><span data-lang="es">/mes</span></span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Custom Workout Plan</span><span data-lang="es">Plan de Ejercicio Personalizado</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Monthly Check-ins</span><span data-lang="es">Revisiones Mensuales</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Email Support</span><span data-lang="es">Soporte por Email</span>
+            </li>
+          </ul>
+          <a href="#booking" class="block w-full py-3 text-center border-2 border-brand-600 text-brand-400 hover:bg-brand-600 hover:text-white rounded-full font-semibold transition">
+            <span data-lang="en">Get Started</span><span data-lang="es">Comenzar</span>
+          </a>
+        </div>
+        
+        <!-- Popular Plan -->
+        <div class="relative p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-brand-600/20 to-dark-800 border-2 border-brand-500 transition-all duration-300 transform scale-105">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-600 text-white text-sm font-semibold rounded-full">
+            <span data-lang="en">Most Popular</span><span data-lang="es">Más Popular</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 mt-2"><span data-lang="en">Online Premium</span><span data-lang="es">Online Premium</span></h3>
+          <p class="text-gray-400 text-sm mb-6"><span data-lang="en">Complete online coaching experience</span><span data-lang="es">Experiencia completa de coaching</span></p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$199</span>
+            <span class="text-gray-400"><span data-lang="en">/month</span><span data-lang="es">/mes</span></span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Everything in Basic</span><span data-lang="es">Todo lo del Básico</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">4 Live Video Sessions</span><span data-lang="es">4 Sesiones de Video</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Nutrition Guidance</span><span data-lang="es">Guía Nutricional</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">WhatsApp Support</span><span data-lang="es">Soporte por WhatsApp</span>
+            </li>
+          </ul>
+          <a href="#booking" class="block w-full py-3 text-center bg-brand-600 hover:bg-brand-500 text-white rounded-full font-semibold transition pulse-glow">
+            <span data-lang="en">Get Started</span><span data-lang="es">Comenzar</span>
+          </a>
+        </div>
+        
+        <!-- In-Person Plan -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-dark-800 border border-dark-600 transition-all duration-300 hover:border-brand-500/30">
+          <h3 class="text-xl font-semibold mb-2"><span data-lang="en">In-Person</span><span data-lang="es">Presencial</span></h3>
+          <p class="text-gray-400 text-sm mb-6"><span data-lang="en">Face-to-face personal training</span><span data-lang="es">Entrenamiento personal presencial</span></p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$349</span>
+            <span class="text-gray-400"><span data-lang="en">/month</span><span data-lang="es">/mes</span></span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">8 In-Person Sessions</span><span data-lang="es">8 Sesiones Presenciales</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Full Nutrition Plan</span><span data-lang="es">Plan Nutricional Completo</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">Priority Scheduling</span><span data-lang="es">Horarios Prioritarios</span>
+            </li>
+            <li class="flex items-center gap-2 text-gray-300">
+              <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span data-lang="en">24/7 Support</span><span data-lang="es">Soporte 24/7</span>
+            </li>
+          </ul>
+          <a href="#booking" class="block w-full py-3 text-center border-2 border-brand-600 text-brand-400 hover:bg-brand-600 hover:text-white rounded-full font-semibold transition">
+            <span data-lang="en">Get Started</span><span data-lang="es">Comenzar</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Booking Section -->
+  <section id="booking" class="py-20 bg-dark-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-brand-600/20 text-brand-300 rounded-full">
+            <span data-lang="en">Book Your Session</span><span data-lang="es">Reserva Tu Sesión</span>
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">
+            <span data-lang="en">Ready to <span class="gradient-text">Transform?</span></span>
+            <span data-lang="es">¿Lista para <span class="gradient-text">Transformarte?</span></span>
+          </h2>
+          <p class="text-gray-300 text-lg mb-8">
+            <span data-lang="en">Book a free consultation call to discuss your goals and find the perfect program for you. No commitment required.</span>
+            <span data-lang="es">Agenda una llamada de consulta gratuita para discutir tus metas y encontrar el programa perfecto para ti. Sin compromiso.</span>
+          </p>
+          
+          <div class="space-y-4">
+            <a href="mailto:eileen@devotion.fit" class="flex items-center gap-3 text-gray-300 hover:text-brand-400 transition">
+              <div class="w-10 h-10 bg-brand-600/20 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              eileen@devotion.fit
+            </a>
+            <a href="https://wa.me/1234567890" class="flex items-center gap-3 text-gray-300 hover:text-brand-400 transition">
+              <div class="w-10 h-10 bg-brand-600/20 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-brand-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              WhatsApp
+            </a>
+            <a href="https://instagram.com/devotion.fit" class="flex items-center gap-3 text-gray-300 hover:text-brand-400 transition">
+              <div class="w-10 h-10 bg-brand-600/20 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-brand-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              @devotion.fit
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-dark-900 p-6 sm:p-8 rounded-3xl border border-dark-600">
+          <h3 class="text-xl font-semibold mb-6"><span data-lang="en">Schedule Free Consultation</span><span data-lang="es">Agenda Consulta Gratuita</span></h3>
+          <form id="booking-form" class="space-y-5">
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">First Name</label>
-              <input type="text" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition" placeholder="John">
+              <label class="block text-sm font-medium text-gray-300 mb-2"><span data-lang="en">Full Name</span><span data-lang="es">Nombre Completo</span></label>
+              <input type="text" name="name" required class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition">
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
-              <input type="text" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition" placeholder="Doe">
+              <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition">
             </div>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-            <input type="email" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition" placeholder="john@example.com">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-            <textarea rows="4" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition resize-none" placeholder="Tell us about your project..."></textarea>
-          </div>
-          <button type="submit" class="w-full bg-primary-600 hover:bg-primary-500 py-4 rounded-xl font-semibold text-lg transition transform hover:scale-[1.02]">
-            Send Message
-          </button>
-        </form>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">WhatsApp</label>
+              <input type="tel" name="phone" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2"><span data-lang="en">Training Interest</span><span data-lang="es">Interés de Entrenamiento</span></label>
+              <select name="interest" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition">
+                <option value="">--</option>
+                <option value="online-basic">Online Basic / Online Básico</option>
+                <option value="online-premium">Online Premium</option>
+                <option value="in-person">In-Person / Presencial</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2"><span data-lang="en">Your Goals</span><span data-lang="es">Tus Metas</span></label>
+              <textarea name="goals" rows="3" class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 outline-none transition resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 py-4 rounded-xl font-semibold text-lg transition transform hover:scale-[1.02]">
+              <span data-lang="en">Book Free Consultation</span><span data-lang="es">Reservar Consulta Gratuita</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-dark-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1 mb-4 text-sm font-medium bg-brand-600/20 text-brand-300 rounded-full">
+        <span data-lang="en">Get In Touch</span><span data-lang="es">Contáctame</span>
+      </span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">
+        <span data-lang="en">Let's <span class="gradient-text">Connect</span></span>
+        <span data-lang="es"><span class="gradient-text">Conectemos</span></span>
+      </h2>
+      <p class="text-gray-400 text-lg mb-10">
+        <span data-lang="en">Follow me on social media for daily fitness tips, motivation, and behind-the-scenes content.</span>
+        <span data-lang="es">Sígueme en redes sociales para consejos diarios de fitness, motivación y contenido exclusivo.</span>
+      </p>
+      
+      <div class="flex justify-center gap-4">
+        <a href="https://instagram.com/devotion.fit" class="w-14 h-14 bg-dark-700 hover:bg-brand-600 rounded-full flex items-center justify-center transition transform hover:scale-110">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://facebook.com/devotion.fit" class="w-14 h-14 bg-dark-700 hover:bg-brand-600 rounded-full flex items-center justify-center transition transform hover:scale-110">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://youtube.com/@devotion.fit" class="w-14 h-14 bg-dark-700 hover:bg-brand-600 rounded-full flex items-center justify-center transition transform hover:scale-110">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://tiktok.com/@devotion.fit" class="w-14 h-14 bg-dark-700 hover:bg-brand-600 rounded-full flex items-center justify-center transition transform hover:scale-110">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
       </div>
     </div>
   </section>
   
   <!-- Footer -->
-  <footer class="py-12 bg-slate-900 border-t border-slate-800">
+  <footer class="py-12 bg-dark-900 border-t border-dark-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center space-x-2">
-          <img src="assets/images/logo.png" alt="Logo" class="h-8 w-8 rounded-lg">
-          <span class="font-bold text-lg">Influencer</span>
+        <div class="flex items-center space-x-3">
+          <img src="assets/images/eileen-logo-badge.webp" alt="Devotion.Fit" class="h-10 w-auto">
+          <span class="font-display font-bold text-lg">
+            <span class="text-brand-400">Devotion</span><span class="text-white">.Fit</span>
+          </span>
         </div>
-        <div class="flex items-center space-x-6 text-gray-400">
-          <a href="#" class="hover:text-white transition">Privacy</a>
-          <a href="#" class="hover:text-white transition">Terms</a>
-          <a href="#" class="hover:text-white transition">Support</a>
+        <div class="flex items-center space-x-6 text-gray-400 text-sm">
+          <a href="#" class="hover:text-brand-400 transition"><span data-lang="en">Privacy Policy</span><span data-lang="es">Política de Privacidad</span></a>
+          <a href="#" class="hover:text-brand-400 transition"><span data-lang="en">Terms of Service</span><span data-lang="es">Términos de Servicio</span></a>
         </div>
-        <p class="text-gray-500 text-sm">
-          © 2026 Influencer Platform. All rights reserved.
-        </p>
+        <p class="text-gray-500 text-sm">© 2026 Devotion.Fit by Eileen</p>
       </div>
     </div>
   </footer>
   
-  <!-- Install PWA Prompt -->
-  <div id="install-prompt" class="hidden fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-80 glass border border-white/20 rounded-2xl p-4 z-50 safe-area-bottom">
-    <div class="flex items-start space-x-3">
-      <img src="assets/images/logo.png" alt="Logo" class="h-10 w-10 rounded-lg flex-shrink-0">
-      <div class="flex-1">
-        <h4 class="font-semibold mb-1">Install App</h4>
-        <p class="text-sm text-gray-300 mb-3">Add to your home screen for the best experience</p>
-        <div class="flex space-x-2">
-          <button id="install-btn" class="flex-1 bg-primary-600 hover:bg-primary-500 py-2 px-4 rounded-lg text-sm font-medium transition">Install</button>
-          <button id="dismiss-btn" class="py-2 px-4 rounded-lg text-sm text-gray-400 hover:text-white transition">Later</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- App JavaScript -->
   <script src="assets/js/app.js"></script>
 </body>
 </html>

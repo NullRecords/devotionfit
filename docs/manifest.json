@@ -1,11 +1,11 @@
 {
-  "name": "Influencer Platform",
-  "short_name": "Influencer",
-  "description": "A modern influencer platform built with mobile-first design",
+  "name": "Devotion.Fit by Eileen",
+  "short_name": "Devotion.Fit",
+  "description": "Personal Training & Fitness Coaching - Transform your body and mind with Eileen",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#6366f1",
+  "background_color": "#0a0a0a",
+  "theme_color": "#10b981",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -21,13 +21,13 @@
       "purpose": "any maskable"
     },
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/eileen-logo-big.webp",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     }
   ],
-  "categories": ["social", "lifestyle"],
+  "categories": ["health", "fitness", "lifestyle"],
   "screenshots": [],
   "prefer_related_applications": false
 }

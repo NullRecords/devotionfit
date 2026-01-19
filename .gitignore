@@ -1,3 +1,17 @@
+# ===========================================
+# ForgeWeb Static Site - .gitignore
+# ===========================================
+
+# ForgeWeb admin tools (local only - never deployed)
+ForgeWeb/
+
+# Backup folder
+_backup/
+
+# ===========================================
+# Legacy Django Files (kept for reference)
+# ===========================================
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
